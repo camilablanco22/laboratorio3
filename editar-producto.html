@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Productos | Editar producto</title>
+</head>
+<body>
+    <header>
+        <a href="#">Volver</a>
+        <h1>Productos</h1>
+        <h2>Editar producto existente</h2>
+    </header>
+
+    <section>
+        <form action="editar-producto.html" method="get">
+
+            <label for="id_producto">Identificación</label>
+            <input type="text" id="id_producto" name="id_producto" required placeholder="Ingrese identificación del producto a modificar" size="50">
+            <input type="submit" value="BUSCAR">
+            <br><br>
+        </form>
+    </section>
+
+    <section>
+        <form action="#" method="get">
+            <fieldset><legend>Nuevos datos</legend>
+                <label for="desc_producto">Descripción</label>
+                <textarea id="desc_producto" name="desc_producto"></textarea>
+                <br><br>
+                <label for="precio">Precio $</label>
+                <input type="number" id="precio" name="precio" step="0.01" min="0" placeholder="0,00" required>
+                <select id="unidad_medida_precio" name="unidad_medida_precio">
+                    <option value="1">por unidad</option>
+                    <option value="2">por kilogramo</option>
+                </select>
+                <br><br>
+
+                <label for="cant_disponible">Cantidad disponible</label>
+                <input type="number" id="cant_disponible" name="cant_disponible" min="0" placeholder="0" required>
+                <select id="unidad_medida_cant" name="unidad_medida_cant">
+                    <option value="1">Unidad/es</option>
+                    <option value="2">Kilogramo/s</option>
+                </select>
+                <br><br>
+
+                <label for="categoria">Categoría</label>
+                <select id="categoria" name="categoria">
+                    <option value="1">Panificación</option>
+                    <option value="2">Pastelería</option>
+                </select>
+            </fieldset>
+
+            <br><br>
+            <input type="submit" value="GUARDAR CAMBIOS">
+            <input type="reset" value="CANCELAR">
+
+        </form>
+    </section>
+
+</body>
+</html>
