@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device.width, intial-scale=1.0">
+    <title>Panadería el maná: Ventas</title>
+
+</head>
+<body>
+    <header>
+    <a href="#" class="btn">VOLVER</a>
+    <h1>Venta de productos</h1>
+    </header>
+    <form action="#" method="post">
+        <fieldset>
+            <legend>Complete los datos sobre la venta</legend>
+            <div>
+                <label for="tipo_comprador">Tipo de comprador</label><br>
+                <select name="tipo_comp" id="tipo_comprador">
+                    <option value="1">Consumidor final</option>
+                    <option value="2">Mayorista</option>
+                </select>
+            </div>
+
+            <br>
+
+            <div>
+                <label>Tipo de venta</label><br>
+                <label>Contado</label><input type="radio" name="tip_venta" value="1">
+                <br>
+                <label>Crédito</label><input type="radio" name="tip_venta" value="2">
+            </div>
+
+            <br>
+
+            <div>
+                <label for="forma_pago">Forma de pago</label>
+                <select name="forma_pago" id="forma_pago">
+                    <option value="1">Efectivo</option>
+                    <option value="2">Transferencia</option>
+                    <option value="3">Débito</option>
+                    <option value="4">Crédito</option>
+                </select>
+            </div>
+
+            <br>
+
+            <div>
+                <label for="tip_comprobante">Tipo de comprobante</label>
+                <select name="tip_comprobante" id="tip_comprobante">
+                    <option>Ninguno</option>
+                    <option>Factura</option>
+                    <option>Ticket</option>
+                </select>
+                <br>
+                <label>Nro de comprobante:</label>
+            </div>
+
+            <br>
+
+            <div>
+                <label>Observaciones adicionales</label><br>
+                <textarea name="obs" id="obs" cols="30" rows="5"
+                placeholder="Ingrese informacion adicional...">
+                </textarea>
+            </div>
+
+            <!--DATOS DEL MAYORISTA-->
+            <section>
+                <fieldset>
+                    <legend>Datos del mayorista</legend>
+                    <div>
+                        <label for="nom_may">Nombre</label>
+                        <input type="text" name="nom_may" id="nom_may">
+                    </div>
+
+                    <br>
+
+                    <div>
+                        <label for="cuit_may">CUIT</label>
+                        <input type="text" id="cuit_may" name="cuit_may" maxlength="11">
+                    </div>
+
+                    <br>
+
+                    <div>
+                        <label for="direc_may">Dirección</label>
+                        <input type="text" id="direc_may" name="direct_may">
+                    </div>
+
+                    <br>
+
+                    <div>
+                        <label for="tel_may">Nro de tel </label>
+                        <input type="text" id="tel_may" name="tel_may" maxlength="10">
+                    </div>
+
+                    <br>
+
+                    <div>
+                        <label>Email</label>
+                        <input type="email" id="email_may" name="email_may">
+                    </div>
+
+                </fieldset>
+            </section>
+
+            <br>
+
+            <input type="submit" value="ACEPTAR">
+            <input type="reset" value="CANCELAR">
+
+
+        </fieldset>
+    </form>
+
+</body>
+</html>
