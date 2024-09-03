@@ -1,0 +1,15 @@
+div.contenedor-cuerpo{background-color: #ff9d0c;
+                      font-family: arial, Helvetica, sans-serif;
+                      background-image: url("../IMG/dibujo-panes.jpg") }
+
+#cabecera{background-color: darkkhaki;
+            /*background-image: url("../IMG/dibujo-panes.jpg")
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;*/
+            font-weight: bold}
+
+
+fieldset.formulario{background-color: #ffeae4}
+
+footer{color: black;background-color: #ffba8b}
