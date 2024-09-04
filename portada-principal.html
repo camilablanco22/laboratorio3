@@ -2,27 +2,160 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Panaderia "El Mana" | Pagina principal</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panadería "El Maná" | Página principal</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+
+        header {
+            background-color: lightslategray;
+            color: white;
+            text-align: center;
+            padding: 2em 0;
+            margin-bottom: 2em;
+        }
+        .card {
+            transition: transform 0.3s ease;
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+        .card-body p {
+            font-size: 0.9rem;
+            color: #555;
+        }
+        /* Tamaño igual para todas las img */
+        .card-img-top {
+            width: 100%;
+            height: 200px; /* Ajusta este valor según lo que necesites */
+            object-fit: cover; /* Mantiene la proporción de la imagen y la recorta si es necesario */
+        }
+    </style>
 </head>
 <body>
-    <header>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img src="logo.png" alt="Logo" width="108" height="43" class="d-inline-block align-text-top">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Features</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Pricing</a>
+            </li>
+          </ul>
+          <span class="navbar-text">
+            Navbar text with an inline element
+          </span>
+        </div>
+      </div>
+    </nav>
+
+    <header class="cabecera">
         <h1>PANADERÍA EL MANÁ</h1>
         <h2>PÁGINA PRINCIPAL</h2>
     </header>
-    <h3>Menú</h3>
-    <nav>
-        <ul>
-            <li> <a href="#">Iniciar sesión</a> </li>
-            <li> <a href="#">Productos </a> </li>
-            <li> <a href="#">Pedidos</a> </li>
-            <li> <a href="#">Proveedores</a> </li>
-            <li> <a href="#">Empleados</a> </li>
-            <li> <a href="#">Clientes mayoristas</a> </li>
-            <li> <a href="#">Ventas</a> </li>
-            <li> <a href="#">Informes</a> </li>
-            <li> <a href="#">Administración de perfiles</a> </li>
-        </ul>
-    </nav>
 
+    <div class="container contenedor-cuerpo">
+        <h3 class="text-center mb-4">Menú</h3>
+
+        <div class="row row-cols-1 row-cols-md-4 g-5">
+            <div class="col">
+                <div class="card h-100 text-center">
+                    <img src="panes.jpeg" class="card-img-top" alt="Productos">
+                    <div class="card-body">
+                        <h5 class="card-title">Productos</h5>
+                        <p class="card-text">Explora nuestra variedad de productos recién horneados, con variedad en panificación y pastelería.</p>
+                        <a href="#" class="btn btn-success">ACCEDER</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100 text-center">
+                    <img src="ver-pedidos.png" class="card-img-top" alt="Pedidos">
+                    <div class="card-body">
+                        <h5 class="card-title">Pedidos</h5>
+                        <p class="card-text">Realizar un nuevo pedido, gestiona todos los pedidos realizados</p>
+                        <a href="registro_pedido.html" class="btn btn-success">ACCEDER</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100 text-center">
+                    <img src="proveedor2.jpg" class="card-img-top" alt="Proveedores">
+                    <div class="card-body">
+                        <h5 class="card-title">Proveedores</h5>
+                        <p class="card-text">Información completa de todos los proveedores con los que trabajamos </p>
+                        <a href="#" class="btn btn-success">ACCEDER</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100 text-center">
+                    <img src="empleados%202.png" class="card-img-top" alt="Empleados">
+                    <div class="card-body">
+                        <h5 class="card-title">Empleados</h5>
+                        <p class="card-text">Información completa sobre todos los empleados, modificar información.</p>
+                        <a href="#" class="btn btn-success">ACCEDER</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100 text-center">
+                    <img src="mayorista.jpeg" class="card-img-top" alt="Clientes mayoristas">
+                    <div class="card-body">
+                        <h5 class="card-title">Clientes mayoristas</h5>
+                        <p class="card-text">Ofrecemos servicios especiales para nuestros clientes mayoristas. Toda su información aquí.</p>
+                        <a href="#" class="btn btn-success">ACCEDER</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100 text-center">
+                    <img src="ventas.png" class="card-img-top" alt="Ventas">
+                    <div class="card-body">
+                        <h5 class="card-title">Ventas</h5>
+                        <p class="card-text">Realizar una nueva venta, información sobre ventas realizadas, actualizar precios</p>
+                        <a href="gestion_venta.html" class="btn btn-success">ACCEDER</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100 text-center">
+                    <img src="informe2.jpg" class="card-img-top" alt="Informes">
+                    <div class="card-body">
+                        <h5 class="card-title">Informes</h5>
+                        <p class="card-text">Accede a informes detallados sobre la gestión de la panadería.</p>
+                        <a href="#" class="btn btn-success">ACCEDER</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100 text-center">
+                    <img src="perfiles.png" class="card-img-top" alt="Administración de perfiles">
+                    <div class="card-body">
+                        <h5 class="card-title">Administración de perfiles</h5>
+                        <p class="card-text">Contemplar diferentes perfiles de usuario y el control de permisos para cada perfil de usuario.</p>
+                        <a href="#" class="btn btn-success">ACCEDER</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
