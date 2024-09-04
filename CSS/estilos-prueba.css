@@ -1,0 +1,13 @@
+div.contenedor-cuerpo{background-color: #ff9d0c;
+                      font-family: arial, Helvetica, sans-serif;
+                      background-image: url("../IMG/panes.jpeg");
+                        }
+
+div.cabecera{background-color: darkkhaki;
+            font-family: "Book Antiqua";
+            background-image: url("../IMG/dibujo-panes.jpg")}
+
+
+fieldset.formulario{background-color: #ffeae4}
+
+footer{color: black;background-color: #ffba8b}
