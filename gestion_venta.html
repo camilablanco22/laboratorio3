@@ -10,117 +10,124 @@
 </head>
 <body>
 
-    <header>
-        <div class="container-fluid text-center">
-            <h1>Venta de productos</h1>
-        </div>
-    </header>
-    <div class="container">
+    <div class="container-fluid contenedor-cuerpo">
+        <header>
+            <div class="container-fluid text-center cabecera rounded mb-4">
+                <h2>____________</h2>
+                <h1>Venta de productos</h1>
+                <br>
+            </div>
+        </header>
+
         <div class="row justify-content-center">
             <form action="#" method="post" >
-                <fieldset class="p-4 border rounded">
+
+                <div class="container text-center ">
 
 
-                    <div class="row justify-content-center">
+                    <fieldset class="p-4 border rounded formulario">
 
-                        <div class="col-md-6 ">
-                            <fieldset class="p-4 border rounded">
-                                <legend>Complete los datos sobre la venta</legend>
-                                <div class="mb-3">
-                                    <label for="tipo_comprador" class="form-label">Tipo de comprador</label>
-                                    <select name="tipo_comp" id="tipo_comprador" class="form-select">
-                                        <option selected hidden>Seleccione...</option>
-                                        <option value="1">Consumidor final</option>
-                                        <option value="2">Mayorista</option>
-                                    </select>
-                                </div>
+                        <div class="row justify-content-center">
 
-                                <div class="row mb-3">
-                                    <label class="form-label">Tipo de venta</label>
-                                    <div class="col-3">
-                                        <label class="form-check-label">Contado</label>
-                                        <input type="radio" name="tip_venta" value="1" class="form-check-input">
+                            <div class="col-md-6 ">
+                                <fieldset class="p-4 border rounded">
+                                    <legend>Complete los datos sobre la venta</legend>
+                                    <div class="mb-3">
+                                        <label for="tipo_comprador" class="form-label">Tipo de comprador</label>
+                                        <select name="tipo_comp" id="tipo_comprador" class="form-select">
+                                            <option selected hidden>Seleccione...</option>
+                                            <option value="1">Consumidor final</option>
+                                            <option value="2">Mayorista</option>
+                                        </select>
                                     </div>
-                                    <div class="col-3">
-                                        <label class="form-check-label">Crédito</label>
-                                        <input type="radio" name="tip_venta" value="2" class="form-check-input">
+
+                                    <div class="row mb-3">
+                                        <label class="form-label">Tipo de venta</label>
+                                        <div class="col-3">
+                                            <label class="form-check-label">Contado</label>
+                                            <input type="radio" name="tip_venta" value="1" class="form-check-input">
+                                        </div>
+                                        <div class="col-3">
+                                            <label class="form-check-label">Crédito</label>
+                                            <input type="radio" name="tip_venta" value="2" class="form-check-input">
+                                        </div>
                                     </div>
-                                </div>
 
-                                <div class="mb-3">
-                                    <label for="forma_pago" class="form-label">Forma de pago</label>
-                                    <select name="forma_pago" id="forma_pago" class="form-select">
-                                        <option selected hidden>Seleccione...</option>
-                                        <option value="1">Efectivo</option>
-                                        <option value="2">Transferencia</option>
-                                        <option value="3">Débito</option>
-                                        <option value="4">Crédito</option>
-                                    </select>
-                                </div>
+                                    <div class="mb-3">
+                                        <label for="forma_pago" class="form-label">Forma de pago</label>
+                                        <select name="forma_pago" id="forma_pago" class="form-select">
+                                            <option selected hidden>Seleccione...</option>
+                                            <option value="1">Efectivo</option>
+                                            <option value="2">Transferencia</option>
+                                            <option value="3">Débito</option>
+                                            <option value="4">Crédito</option>
+                                        </select>
+                                    </div>
 
-                                <div class="mb-3">
-                                    <label for="tip_comprobante" class="form-label">Tipo de comprobante</label>
-                                    <select name="tip_comprobante" id="tip_comprobante" class="form-select">
-                                        <option selected hidden>Seleccione...</option>
-                                        <option>Ninguno</option>
-                                        <option>Factura</option>
-                                        <option>Ticket</option>
-                                    </select>
-                                    <label for="nro_comprobante" class="form-label">Nro de comprobante:</label>
-                                    <input type="text" id="nro_comprobante" name="nro_comprobante" class="form-control" disabled>
-                                </div>
+                                    <div class="mb-3">
+                                        <label for="tip_comprobante" class="form-label">Tipo de comprobante</label>
+                                        <select name="tip_comprobante" id="tip_comprobante" class="form-select">
+                                            <option selected hidden>Seleccione...</option>
+                                            <option>Ninguno</option>
+                                            <option>Factura</option>
+                                            <option>Ticket</option>
+                                        </select>
+                                        <label for="nro_comprobante" class="form-label">Nro de comprobante:</label>
+                                        <input type="text" id="nro_comprobante" name="nro_comprobante" class="form-control" disabled>
+                                    </div>
 
-                                <div class="mb-3">
-                                    <label for="obs" class="form-label">Observaciones adicionales</label>
-                                    <textarea name="obs" id="obs" cols="30" rows="5" class="form-control"
-                                        placeholder="Ingrese informacion adicional..."></textarea>
-                                </div>
-                            </fieldset>
+                                    <div class="mb-3">
+                                        <label for="obs" class="form-label">Observaciones adicionales</label>
+                                        <textarea name="obs" id="obs" cols="30" rows="5" class="form-control"
+                                            placeholder="Ingrese informacion adicional..."></textarea>
+                                    </div>
+                                </fieldset>
+                            </div>
+
+                            <!-- Datos del distribuidor -->
+                            <div class="col-md-6">
+                                <fieldset class="p-4 border rounded">
+                                    <legend>Datos del mayorista</legend>
+                                    <div class="mb-3">
+                                        <label for="nom_may" class="form-label">Nombre</label>
+                                        <input type="text" name="nom_may" id="nom_may" class="form-control">
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="cuit_may" class="form-label">CUIT</label>
+                                        <input type="text" id="cuit_may" name="cuit_may" maxlength="11" class="form-control">
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="direc_may" class="form-label">Dirección</label>
+                                        <input type="text" id="direc_may" name="direct_may" class="form-control">
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="tel_may" class="form-label">Nro de tel</label>
+                                        <input type="text" id="tel_may" name="tel_may" maxlength="10" class="form-control">
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="email_may" class="form-label">Email</label>
+                                        <input type="email" id="email_may" name="email_may" class="form-control">
+                                    </div>
+                                </fieldset>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <div class="mt-3">
+                                <input type="submit" value="ACEPTAR" class="btn btn-primary">
+                                <input type="reset" value="CANCELAR" class="btn btn-secondary">
+                            </div>
                         </div>
 
-                        <!-- Datos del distribuidor -->
-                        <div class="col-md-6">
-                            <fieldset class="p-4 border rounded">
-                                <legend>Datos del mayorista</legend>
-                                <div class="mb-3">
-                                    <label for="nom_may" class="form-label">Nombre</label>
-                                    <input type="text" name="nom_may" id="nom_may" class="form-control">
-                                </div>
-
-                                <div class="mb-3">
-                                    <label for="cuit_may" class="form-label">CUIT</label>
-                                    <input type="text" id="cuit_may" name="cuit_may" maxlength="11" class="form-control">
-                                </div>
-
-                                <div class="mb-3">
-                                    <label for="direc_may" class="form-label">Dirección</label>
-                                    <input type="text" id="direc_may" name="direct_may" class="form-control">
-                                </div>
-
-                                <div class="mb-3">
-                                    <label for="tel_may" class="form-label">Nro de tel</label>
-                                    <input type="text" id="tel_may" name="tel_may" maxlength="10" class="form-control">
-                                </div>
-
-                                <div class="mb-3">
-                                    <label for="email_may" class="form-label">Email</label>
-                                    <input type="email" id="email_may" name="email_may" class="form-control">
-                                </div>
-                            </fieldset>
-                        </div>
-                    </div>
-                    <div class="text-center">
-                        <div class="mt-3">
-                            <input type="submit" value="ACEPTAR" class="btn btn-primary">
-                            <input type="reset" value="CANCELAR" class="btn btn-secondary">
-                        </div>
-                    </div>
-
-                </fieldset>
+                    </fieldset>
+                </div>
             </form>
         </div>
 
-        <div class="container-fluid">
+        <div class="container-fluid mt-4">
             <footer class="text-center py-3 mt-0 mb-0 rounded">Panadería El Maná - 2024</footer>
 
         </div>
