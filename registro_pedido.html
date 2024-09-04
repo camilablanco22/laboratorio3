@@ -12,66 +12,95 @@
     </head>
     <body>
 
-        <header class="text-center my-4">
-            <!--<a href="#" class="btn btn-secondary mb-3">VOLVER</a>-->
-            <h2>Registro de Pedidos a Proveedores</h2>
-        </header>
+        <div class="container-fluid contenedor-cuerpo">
 
-        <section class="container">
-            <div class="row justify-content-center">
-                <div class="col-md-8">
-                    <form action="#" method="post" class="border p-4 rounded">
-                        <fieldset>
-                            <legend class="text-center mb-4">Formulario de Pedido</legend>
+            <div class="container-fluid text-center rounded cabecera">
+                <header>
+                    <!--<a href="#" class="btn btn-secondary mb-3">VOLVER</a>-->
+                    <h2>____________</h2>
+                    <h1>Registro de Pedidos a Proveedores</h1>
+                    <br>
 
-                            <!-- Proveedor -->
-                            <div class="mb-3">
-                                <label for="proveedor" class="form-label">Proveedor:</label>
-                                <input type="text" id="proveedor" name="proveedor" class="form-control" required>
-                            </div>
-
-                            <!-- Producto/Insumo -->
-                            <div class="mb-3">
-                                <label for="producto" class="form-label">Producto/Insumo:</label>
-                                <input type="text" id="producto" name="producto" class="form-control" required>
-                            </div>
-
-                            <!-- Cantidad -->
-                            <div class="mb-3">
-                                <label for="cantidad" class="form-label">Cantidad:</label>
-                                <input type="number" id="cantidad" name="cantidad" class="form-control" required>
-                            </div>
-
-                            <!-- Fecha de Solicitud -->
-                            <div class="mb-3">
-                                <label for="fecha" class="form-label">Fecha de Solicitud:</label>
-                                <input type="date" id="fecha" name="fecha" class="form-control" required>
-                            </div>
-
-                            <!-- Número de Pedido -->
-                            <div class="mb-3">
-                                <label for="numero" class="form-label">Número de Pedido:</label>
-                                <input type="text" id="numero" name="numero" class="form-control" required>
-                            </div>
-
-                            <!-- Observaciones -->
-                            <div class="mb-3">
-                                <label for="observaciones" class="form-label">Observaciones:</label>
-                                <textarea id="observaciones" name="observaciones" class="form-control" rows="4"></textarea>
-                            </div>
-
-                            <!-- Botón Registrar Pedido -->
-                            <div class="text-center">
-                                <input type="submit" value="Registrar Pedido" class="btn btn-primary">
-                            </div>
-                        </fieldset>
-                    </form>
-                </div>
+                </header>
             </div>
-        </section>
 
-        <div class="container-fluid">
-            <footer class="text-center py-3 mt-0 mb-0 rounded">Panadería El Maná - 2024</footer>
+            <div class="container-fluid mt-3 mb-3">
+                <form action="#" method="post" >
+                    <!-- CONTAINER PARA EL FIELDSET-->
+                    <div class="container text-center mb-3 ">
+
+                        <fieldset class="rounded border formulario">
+                            <div class="container-fluid text-center">
+                                <legend>
+                                    Formulario de Pedido
+                                </legend>
+                            </div>
+
+                            <div class="container text-center mb-3">
+                                <div class="row justify-content-center">
+                                    <div class="col-md-8">
+
+                                        <!-- Proveedor -->
+                                        <div class="mb-3">
+                                            <label for="proveedor" class="form-label">Proveedor:</label>
+                                            <input type="text" id="proveedor" name="proveedor" class="form-control" required>
+                                        </div>
+
+                                        <!-- Producto/Insumo -->
+                                        <div class="mb-3">
+                                            <label for="producto" class="form-label">Producto/Insumo:</label>
+                                            <input type="text" id="producto" name="producto" class="form-control" required>
+                                        </div>
+
+                                        <!-- Cantidad -->
+                                        <div class="mb-3">
+                                            <label for="cantidad" class="form-label">Cantidad:</label>
+                                            <input type="number" id="cantidad" name="cantidad" class="form-control" required>
+                                        </div>
+
+                                        <!-- Fecha de Solicitud -->
+                                        <div class="mb-3">
+                                            <label for="fecha" class="form-label">Fecha de Solicitud:</label>
+                                            <input type="date" id="fecha" name="fecha" class="form-control" required>
+                                        </div>
+
+                                        <!-- Número de Pedido -->
+                                        <div class="mb-3">
+                                            <label for="numero" class="form-label">Número de Pedido:</label>
+                                            <input type="text" id="numero" name="numero" class="form-control" required>
+                                        </div>
+
+                                        <!-- Observaciones -->
+                                        <div class="mb-3">
+                                            <label for="observaciones" class="form-label">Observaciones:</label>
+                                            <textarea id="observaciones" name="observaciones" class="form-control" rows="4"></textarea>
+                                        </div>
+
+                                        <!-- Botón Registrar Pedido -->
+                                        <div class="text-center">
+                                            <input type="submit" value="Registrar Pedido" class="btn btn-primary">
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </fieldset>
+
+                    </div>
+
+
+                </form>
+
+
+            </div>
+
+            <div class="container-fluid">
+                <footer class="text-center py-3 mt-0 mb-0 rounded">Panadería El Maná - 2024</footer>
+
+            </div>
 
         </div>
 
