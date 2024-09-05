@@ -15,9 +15,57 @@
 
 </head>
 <body>
-    <!--
-        ESPACIO PARA EL NAV
-    -->
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="IMG/logo.png" alt="Logo" width="108" height="43" class="d-inline-block align-text-top">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link"  href="portada-principal.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Productos</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Venta
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="gestion_venta.html">Registrar venta</a></li>
+                            <li><a class="dropdown-item" href="#">Historial ventas</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Pedidos
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="registro_pedido.html">Registrar pedido</a></li>
+                            <li><a class="dropdown-item" href="#">Historial pedidos</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Empleados
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Nuevo</a></li>
+                            <li><a class="dropdown-item" href="#">Modificar</a></li>
+                            <li><a class="dropdown-item" href="#">Registro</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
 
     <div class="container-fluid contenedor-cuerpo">
         <!--TITULO/CABECERA PRINCIPAL-->
@@ -28,9 +76,7 @@
             </header>
         </div>
 
-        <br>
 
-        <!-- MOSTRAR LOS DATOS A MODIFICAR-->
         <div class="container-fluid mt-3 mb-3">
 
             <form action="#" method="get">
