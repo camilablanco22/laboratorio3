@@ -7,6 +7,9 @@ div.contenedor-cuerpo{background-color: #ff9d0c;
 div.cabecera{background-color: darkred;
             font-family: "Book Antiqua";
             color: #ffeae4;
+            padding: 2em 0;
+            margin-bottom: 2em;
+            text-align: center;
             //background-image: url("../IMG/dibujo-panes.jpg")
             }
 
