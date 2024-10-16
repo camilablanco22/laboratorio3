@@ -14,7 +14,7 @@ class ItemPedido(models.Model):
     precio_unid = models.DecimalField(max_digits=10, decimal_places=2)
     precio_total = models.DecimalField(max_digits=10, decimal_places=2)
     pedido = models.ForeignKey('Pedido',on_delete=models.CASCADE,related_name='items_pedido')
-    #materia_prima = models.ForeignKey('materia_prima.MateriaPrima', on_delete=models.SET_NULL, related_name = 'materia_prima_pedida')
+    materia_prima = models.ForeignKey('materia_prima.MateriaPrima', on_delete=models.SET_NULL, related_name = 'materia_prima_pedida')
 
 
 class RecepcionPedido(models.Model):
@@ -31,4 +31,4 @@ class ItemRecibido(models.Model):
     precio_unid = models.DecimalField(max_digits=10, decimal_places=2)
     precio_total = models.DecimalField(max_digits=10, decimal_places=2)
     recepcion_pedido = models.ForeignKey('RecepcionPedido', on_delete=models.CASCADE, related_name='items_recepcion_pedido')
-    # materia_prima = models.ForeignKey('materia_prima.MateriaPrima', on_delete=models.SET_NULL, related_name = 'materia_prima_pedida')
+    materia_prima = models.ForeignKey('materia_prima.MateriaPrima', on_delete=models.SET_NULL, related_name = 'materia_prima_recibida')
