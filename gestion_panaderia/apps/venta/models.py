@@ -4,17 +4,20 @@ from django.db import models
 
 class Venta(models.Model):
     tipo_cliente = models.CharField()
-    #Espacio para la clave foránea de cliente_mayorista
+    #cliente_mayorista = models.ForeignKey('cliente_mayorista.ClienteMayorista', on_delete = models.SET_NULL,
+    #                                       related_name = 'ventas_cliente_mayorista', blank=True, null=True)
     fecha_venta = models.DateTimeField()
     tipo_venta = models.CharField()
     forma_pago = models.CharField()
     monto_total = models.DecimalField(max_digits = 10, decimal_places = 2)
     observaciones = models.CharField(max_length = 500)
-    #espacio para la clave foránea del empleado que realizó la venta
+    #empleado = models.ForeignKey('empleado.Empleado', on_delete=models.SET_NULL,
+    #                                       related_name = 'ventas_empleado'
 
 
 class Item(models.Model):
-    #Espacio para clave foranea que relaciona con el producto
+    venta = models.ForeignKey('Venta',on_delete=models.CASCADE, related_name='items_venta')
+    #producto = models.ForeignKey('producto.Producto', on_delete=models.SET_NULL, related_name='items_venta_producto')
     cantidad = models.DecimalField(max_digits = 10, decimal_places = 2)
     precio_item = models.DecimalField(max_digits = 10, decimal_places = 2)
 
