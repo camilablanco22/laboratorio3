@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b5ffb7a1-da8c-4d97-882d-3c782e6bbb70" name="Changes" comment="" />
+    <list default="true" id="b5ffb7a1-da8c-4d97-882d-3c782e6bbb70" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../.idea/laboratorio3.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/laboratorio3.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,9 +23,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 0
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
   <component name="ProjectId" id="2nRNwNrLzjaWKUSHJ6CFz4t8cZY" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -31,8 +34,8 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "28-creación-del-proyecto-de-django",
-    "last_opened_file_path": "C:/Users/Camib/OneDrive/Documents/3ER AÑO/SEGUNDO CUATRIMESTRE/PROGRAMACION III/laboratorio3/gestion_panaderia"
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/Usuario/OneDrive/Escritorio/Universidad/3ER AÑO/2DO CUATRI/PROGRAMACION III/laboratorio3/gestion_panaderia"
   }
 }]]></component>
   <component name="RecentsManager">
