@@ -22,7 +22,7 @@ class RecepcionPedido(models.Model):
     monto_total = models.DecimalField(max_digits=10, decimal_places=2)
     conforme = models.BooleanField()
     observaciones = models.CharField(max_length=500)
-    #proveedor = models.ForeignKey('proveedor.Proveedor',on_delete=models.SET_NULL, related_name='pedidos_recibidos_proveedor')
+    pedido = models.OneToOneField('Pedido', on_delete=models.CASCADE, related_name='pedido_recibido')
     #empleado = models.ForeignKey('empleado.Empleado',on_delete=models.SET_NULL, related_name='pedidos_empleado')
 
 
