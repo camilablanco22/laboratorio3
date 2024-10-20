@@ -8,6 +8,10 @@
         </header>
     </div>
     <div class="container-fluid mt-3 mb-3">
+        <a href="{% url 'producto:nuevo_producto' %}" class="btn btn-primary">
+            AGREGAR
+        </a>
+        <br>
         <table class="table table-bordered table-striped">
             <thead>
                 <tr>
@@ -30,7 +34,7 @@
                         <td>{{ producto.cantidad }}</td>
                         <td>{{ producto.unidadMedida }}</td>
                         <td>{{ producto.tipo }}</td>
-                        <td><a href="#" class="btn btn-primary">
+                        <td><a href="{% url 'producto:editar_producto' producto.id%}" class="btn btn-primary">
                                     EDITAR
                         </a></td>
                         <td><a href="#" class="btn btn-primary">

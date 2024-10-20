@@ -2,7 +2,7 @@ from django.contrib import messages
 from django.shortcuts import render, get_object_or_404, redirect
 from django.urls import reverse
 
-from apps.producto.forms import NuevoProductoForm
+from apps.producto.forms import NuevoProductoForm, ModificarProductoForm
 from apps.producto.models import Producto
 
 
@@ -31,5 +31,20 @@ def nuevo_producto(request):
 
     else:
         producto_form = NuevoProductoForm()
+
+    return render(request, 'producto/producto_form.html', {'form': producto_form})
+
+
+
+def editar_producto(request, pk):
+    producto = get_object_or_404(Producto, pk=pk)
+    if request.method == 'POST':
+        producto_form = ModificarProductoForm(request.POST, instance=producto)
+        if producto_form.is_valid():
+            producto_form.save(commit=True)
+            messages.success(request, 'Se ha actualizado correctamente el Producto')
+            return redirect(reverse('producto:lista_productos'))
+    else:
+        producto_form = ModificarProductoForm(instance=producto)
 
     return render(request, 'producto/producto_form.html', {'form': producto_form})
