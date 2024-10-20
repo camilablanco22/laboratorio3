@@ -1,5 +1,4 @@
 from django.db import models
-#from apps.usuario.models import Usuario
 
 
 class Empleado(models.Model):
@@ -13,7 +12,7 @@ class Empleado(models.Model):
     domicilio_numero = models.IntegerField()
     domicilio_localidad = models.CharField(max_length=50)
     domicilio_departamento = models.CharField(max_length=50)
-    #usuario = models.OneToOneField(Usuario, on_delete=models.CASCADE)
+    usuario = models.OneToOneField('usuario.Usuario', on_delete=models.CASCADE)
 
     def __str__(self):
         return self.nombre_completo
