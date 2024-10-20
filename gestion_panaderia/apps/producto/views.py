@@ -3,9 +3,17 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.urls import reverse
 
 from apps.producto.forms import NuevoProductoForm
+from apps.producto.models import Producto
 
 
 # Create your views here.
+def lista_productos(request):
+    productos = Producto.objects.all()
+    return render(request, 'producto/lista_productos.html', {'productos': productos})
+
+
+
+
 
 
 def nuevo_producto(request):
@@ -18,8 +26,8 @@ def nuevo_producto(request):
             nuevo_prod.save()
             #messages.success(request,
              #                'Se ha agregado correctamente el Anuncio {}'.format(nuevo_anuncio))
-            #return redirect(reverse('producto:listado_productos'))
-            return redirect('producto: nuevo_producto')
+            return redirect(reverse('producto:lista_productos'))
+            #return redirect('producto: nuevo_producto')
 
     else:
         producto_form = NuevoProductoForm()

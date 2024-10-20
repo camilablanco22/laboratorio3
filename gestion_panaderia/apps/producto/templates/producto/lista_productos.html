@@ -1,0 +1,50 @@
+{% extends "base/base.html" %}
+{% load static%}
+{% block titulo %}Productos{% endblock %}
+{% block contenido_principal %}
+    <div class="container-fluid text-center rounded cabecera">
+        <header id="home">
+            <h1>Productos</h1>
+        </header>
+    </div>
+    <div class="container-fluid mt-3 mb-3">
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Descripción</th>
+                    <th>Precio</th>
+                    <th>Stock</th>
+                    <th>Unidad Medida</th>
+                    <th>Tipo</th>
+                    <th>Editar</th>
+                    <th>Eliminar</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for producto in productos %}
+                    <tr>
+                        <td>{{ producto.nombre }}</td>
+                        <td>{{ producto.descripcion }}</td>
+                        <td>{{ producto.precio }}</td>
+                        <td>{{ producto.cantidad }}</td>
+                        <td>{{ producto.unidadMedida }}</td>
+                        <td>{{ producto.tipo }}</td>
+                        <td><a href="#" class="btn btn-primary">
+                                    EDITAR
+                        </a></td>
+                        <td><a href="#" class="btn btn-primary">
+                                    ELIMINAR
+                        </a></td>
+                    </tr>
+                {% empty %}
+                    <tr>
+                        <td colspan="4" class="text-center">No hay productos disponibles</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+
+{% endblock %}
