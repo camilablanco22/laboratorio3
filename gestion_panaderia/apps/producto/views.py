@@ -18,9 +18,10 @@ def nuevo_producto(request):
             nuevo_prod.save()
             #messages.success(request,
              #                'Se ha agregado correctamente el Anuncio {}'.format(nuevo_anuncio))
-            return redirect(reverse('producto:listado_productos'))
+            #return redirect(reverse('producto:listado_productos'))
+            return redirect('producto: nuevo_producto')
 
     else:
         producto_form = NuevoProductoForm()
 
-    return render(request, 'producto/nuevo_producto_form.html', {'form': producto_form})
+    return render(request, 'producto/producto_form.html', {'form': producto_form})
