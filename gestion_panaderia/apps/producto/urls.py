@@ -1,6 +1,6 @@
 from django.urls import path
 
-from gestion_panaderia.apps.producto import views
+from apps.producto import views
 
 app_name = 'producto'
 urlpatterns = [

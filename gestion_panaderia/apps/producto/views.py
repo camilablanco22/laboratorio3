@@ -2,7 +2,7 @@ from django.contrib import messages
 from django.shortcuts import render, get_object_or_404, redirect
 from django.urls import reverse
 
-from gestion_panaderia.apps.producto.forms import NuevoProductoForm
+from apps.producto.forms import NuevoProductoForm
 
 
 # Create your views here.

@@ -1,6 +1,6 @@
 from django import forms
 
-from gestion_panaderia.apps.producto.models import Producto
+from apps.producto.models import Producto
 
 
 class NuevoProductoForm(forms.ModelForm):

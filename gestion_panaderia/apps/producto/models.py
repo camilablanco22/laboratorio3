@@ -16,7 +16,7 @@ class Producto(models.Model):
     descripcion = models.CharField(max_length=500)
     unidadMedida = models.CharField(max_length=4, choices=UNIDAD_MEDIDA_CHOICES)
     precio = models.DecimalField(max_digits=10, decimal_places=2)
-    cantidad = models.PositiveIntegerField(max_length=10)
+    cantidad = models.PositiveIntegerField()
     tipo = models.CharField(max_length=50, choices=TIPO_CHOICES)
     estado = models.BooleanField(default=True)
 
