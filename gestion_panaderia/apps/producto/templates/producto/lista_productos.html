@@ -37,9 +37,13 @@
                         <td><a href="{% url 'producto:editar_producto' producto.id%}" class="btn btn-primary">
                                     EDITAR
                         </a></td>
-                        <td><a href="#" class="btn btn-primary">
-                                    ELIMINAR
-                        </a></td>
+                        <td>
+                            <form action="{% url 'producto:eliminar_producto' %}" method="POST">
+                                {% csrf_token %}
+                                <input type="hidden" name="id_producto" value="{{ producto.id }}">
+                                <input type="submit" value="ELIMINAR" class="btn btn-danger" onclick="return confirm('¿Está seguro que desea eliminar el Producto?');">
+                            </form>
+                        </td>
                     </tr>
                 {% empty %}
                     <tr>

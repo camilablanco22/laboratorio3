@@ -48,3 +48,16 @@ def editar_producto(request, pk):
         producto_form = ModificarProductoForm(instance=producto)
 
     return render(request, 'producto/producto_form.html', {'form': producto_form})
+
+
+
+def eliminar_producto(request):
+    if request.method == 'POST':
+        if 'id_producto' in request.POST:
+            producto = get_object_or_404(Producto, pk=request.POST['id_producto'])
+            nombre_producto = producto.nombre
+            producto.delete()
+            messages.success(request, 'Se ha eliminado exitosamente el Anuncio {}'.format(nombre_producto))
+        else:
+            messages.error(request, 'Debe indicar qué Producto se desea eliminar')
+    return redirect(reverse('producto:lista_productos'))
