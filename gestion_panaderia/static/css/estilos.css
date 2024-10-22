@@ -1,9 +1,8 @@
-div.contenedor-cuerpo{background-color: #ff9d0c;
+div.contenedor-cuerpo{
                       font-family: arial, Helvetica, sans-serif;
                       margin-top:4em;
                       background-image: url("../IMG/dibujo-panes.jpg")
-
-                        }
+                      }
 
 div.cabecera{background-color: darkred;
             font-family: "Book Antiqua";
@@ -16,7 +15,9 @@ div.cabecera{background-color: darkred;
 
 fieldset.formulario{background-color: #ffeae4}
 
-footer{color: black;background-color: #ffba8b}
+div.pie{background-color: darkred;
+            font-family: "Book Antiqua";
+            color: #ffeae4;}
 
 
 div.tabla{
