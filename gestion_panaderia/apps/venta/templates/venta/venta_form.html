@@ -8,10 +8,16 @@
             <h2>Registrar</h2>
         </header>
     </div>
+
+
     <div class="container-fluid mt-3 mb-3">
 
         <form method="post">
+            {% csrf_token %}
+
+            <!-- FORMULARIO DE LA VENTA-->
             <fieldset class="rounded border formulario">
+                <h4>Información de la venta</h4>
                 <div class="row g-3">
                     {% for field in form %}
                         <div class="campo">
@@ -21,11 +27,89 @@
                     {% endfor %}
                     {% csrf_token %} <!--cuestion de token de seguridad-->
                 </div>
-                <div class="mt-3">
-                    <button type="submit" class="btn btn-primary">REGISTRAR</button>
-                </div>
+
             </fieldset>
+
+            <fieldset class="rounded border formulario">
+                <h4>Item</h4>
+                {{ formset.management_form }}
+                <div id="formset-container">
+                    {% for form in formset %}
+                    <div class="seccion-form mb-3 p-3 border rounded">
+                        {{ form.as_p }}
+                    </div>
+                    {% endfor %}
+                </div>
+                <button type="button" class="btn btn-secondary" id="add-form">Agregar Item</button>
+
+            </fieldset>
+
+
+            <div class="mt-3">
+                <button type="submit" class="btn btn-primary">REGISTRAR</button>
+            </div>
+
+
         </form>
     </div>
 
+{% endblock %}
+
+{% block javascript %}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const addButton = document.getElementById('add-form');
+        const formsetContainer = document.getElementById('formset-container');
+        const totalForms = document.getElementById('id_secciones-TOTAL_FORMS');
+
+        // Función para actualizar los índices de los formularios
+        function updateFormIndexes() {
+            const forms = formsetContainer.getElementsByClassName('seccion-form');
+            for (let i = 0; i < forms.length; i++) {
+                const formInputs = forms[i].getElementsByTagName('input');
+                const formSelects = forms[i].getElementsByTagName('select');
+
+                for (let input of formInputs) {
+                    updateElementIndex(input, 'secciones', i);
+                }
+                for (let select of formSelects) {
+                    updateElementIndex(select, 'secciones', i);
+                }
+            }
+            totalForms.value = forms.length;
+        }
+
+        // Función para actualizar el índice de un elemento
+        function updateElementIndex(element, prefix, index) {
+            const idRegex = new RegExp(`(${prefix}-\\d+)`);
+            const replacement = `${prefix}-${index}`;
+            if (element.id) element.id = element.id.replace(idRegex, replacement);
+            if (element.name) element.name = element.name.replace(idRegex, replacement);
+        }
+
+        // Agregar nuevo formulario
+        addButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            const formCount = formsetContainer.children.length;
+            const template = formsetContainer.children[0].cloneNode(true);
+
+            // Limpiar los valores del formulario clonado
+            template.querySelectorAll('input[type="text"]').forEach(input => input.value = '');
+            template.querySelectorAll('select').forEach(select => select.selectedIndex = 0);
+
+            formsetContainer.appendChild(template);
+            updateFormIndexes();
+        });
+
+        // Eliminar formulario
+        formsetContainer.addEventListener('click', function(e) {
+            if (e.target.classList.contains('delete-form')) {
+                e.preventDefault();
+                const form = e.target.closest('.seccion-form');
+                form.remove();
+                updateFormIndexes();
+            }
+        });
+    });
+</script>
 {% endblock %}

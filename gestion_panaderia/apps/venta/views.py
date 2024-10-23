@@ -1,26 +1,34 @@
 from django.shortcuts import render, redirect
 from django.urls import reverse
 
-from apps.venta.forms import NuevaVentaForm
+from apps.venta.forms import NuevaVentaForm, ItemFormSet
 
 
 # Create your views here.
-
 
 def nueva_venta(request):
     venta_nueva = None
     if request.method == 'POST':
         venta_form = NuevaVentaForm(request.POST) #request.post es un objeto del tipo diccionario
         if venta_form.is_valid():
-            # Se guardan los datos que provienen del formulario en la B.D.
-            venta_nueva = venta_form.save(commit=False)
-            #Lógica para registrar el empleado
-            venta_nueva.save()
-            #messages.success(request,
-             #                'Se ha agregado correctamente el Anuncio {}'.format(nuevo_anuncio))
-            return redirect('venta:carga_items')
+            venta = venta_form.save()
+            formset = ItemFormSet(request.POST, instance=venta)
+            if formset.is_valid():
+                # Guardar cada item individualmente
+                items = formset.save(commit=False)
+                for item in items:
+                    # Calcular el precio del item basado en la cantidad y el precio del producto
+                    item.venta = venta
+                    if item.producto:
+                        item.precio_item = item.cantidad * item.producto.precio
+                    item.save()
+                return redirect('venta:lista_ventas')  # Redirige a la lista de ventas después de guardar los items
 
     else:
-        venta_form = NuevaVentaForm()
+        form = NuevaVentaForm()
+        formset = ItemFormSet()
 
-    return render(request, 'venta/venta_form.html', {'form': venta_form})
+    return render(request, 'venta/venta_form.html', {
+        'form': form,
+        'formset': formset
+    })
