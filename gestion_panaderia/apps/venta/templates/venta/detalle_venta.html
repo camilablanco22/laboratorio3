@@ -1,0 +1,30 @@
+{% extends "base/base.html" %}
+{% block titulo %}Detalle de Venta{% endblock %}
+{% block contenido_principal %}
+<div class="container-fluid mt-5">
+    <h1>Detalle de Venta #{{ venta.id }}</h1>
+    <p><strong>Tipo Cliente:</strong> {{ venta.tipo_cliente }}</p>
+    <p><strong>Fecha de Venta:</strong> {{ venta.fecha_venta }}</p>
+    <p><strong>Monto Total:</strong> {{ venta.monto_total }}</p>
+    <h2>Items</h2>
+    <table class="table table-bordered mt-3">
+        <thead>
+            <tr>
+                <th>Producto</th>
+                <th>Cantidad</th>
+                <th>Subtotal</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in items %}
+                <tr>
+                    <td>{{ item.producto.nombre }}</td>
+                    <td>{{ item.cantidad }}</td>
+                    <td>{{ item.precio_item }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="{% url 'venta:lista_ventas' %}" class="btn btn-secondary mt-3">Volver al Listado</a>
+</div>
+{% endblock %}

@@ -1,12 +1,11 @@
 from django.urls import path
+from . import views
 
-from apps.venta import views
+app_name = 'venta'
 
-app_name = 'producto'
 urlpatterns = [
-    #path('', views.lista_productos, name='lista_productos'),
-    #path('<int:pk>/', views.detalle_anuncio, name='detalle_anuncio'),
-    path('nueva/',views.nueva_venta,name='nueva_venta'),
-    #path('editar/<int:pk>/', views.editar_producto, name='editar_producto'),
-    #path('eliminar/', views.eliminar_producto, name='eliminar_producto' )
+    path('nueva/', views.nueva_venta, name='nueva_venta'),
+    path('items/<int:venta_id>/', views.cargar_items, name='cargar_items'),
+    path('ventas/', views.lista_ventas, name='lista_ventas'),  # Listar ventas
+    path('ventas/<int:venta_id>/', views.detalle_venta, name='detalle_venta'),  # Detalle de venta
 ]
