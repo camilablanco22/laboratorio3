@@ -34,13 +34,15 @@
                 <h4>Item</h4>
                 {{ formset.management_form }}
                 <div id="formset-container">
+
                     {% for form in formset %}
-                    <div class="seccion-form mb-3 p-3 border rounded">
+                    <div class="item-form mb-3 p-3 border rounded">
                         {{ form.as_p }}
+                        <p></p>
                     </div>
                     {% endfor %}
                 </div>
-                <button type="button" class="btn btn-secondary" id="add-form">Agregar Item</button>
+                <button type="button" class="btn btn-secondary" id="add-form" >Agregar Item</button><!--onclick="addInput()-->
 
             </fieldset>
 
@@ -57,23 +59,24 @@
 
 {% block javascript %}
 <script>
+    //FORMA DEL CODIGO DE LA PROFE CECILIA
     document.addEventListener('DOMContentLoaded', function() {
         const addButton = document.getElementById('add-form');
         const formsetContainer = document.getElementById('formset-container');
-        const totalForms = document.getElementById('id_secciones-TOTAL_FORMS');
+        const totalForms = document.getElementById('id_items_venta-TOTAL_FORMS');
 
         // Función para actualizar los índices de los formularios
         function updateFormIndexes() {
-            const forms = formsetContainer.getElementsByClassName('seccion-form');
+            const forms = formsetContainer.getElementsByClassName('item-form');
             for (let i = 0; i < forms.length; i++) {
                 const formInputs = forms[i].getElementsByTagName('input');
                 const formSelects = forms[i].getElementsByTagName('select');
 
                 for (let input of formInputs) {
-                    updateElementIndex(input, 'secciones', i);
+                    updateElementIndex(input, 'items', i);
                 }
                 for (let select of formSelects) {
-                    updateElementIndex(select, 'secciones', i);
+                    updateElementIndex(select, 'items', i);
                 }
             }
             totalForms.value = forms.length;
@@ -111,5 +114,54 @@
             }
         });
     });
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /*FORMA DEL VIDEO DE YOUTUBE
+    function addInput(){
+        var forms = document.querySelector('#id_items_venta-TOTAL_FORMS');
+
+        //Actualización de for para label producto
+        newLabelProducto = document.querySelector('label[for="id_items_venta-0-producto"]').cloneNode(true);;
+        newLabelProducto.htmlFor = 'id_items_venta-'+forms.value+'-producto'
+
+        //Actualización de id y name para input producto
+        var newProducto = document.querySelector('#id_items_venta-0-producto').cloneNode(true);
+        newProducto.name = 'items_venta-'+forms.value+'-producto'
+        newProducto.id = 'id_items_venta-'+forms.value+'-producto'
+
+        //Actualización de for para label cantidad
+        newLabelCantidad = document.querySelector('label[for="id_items_venta-0-cantidad"]').cloneNode(true);;
+        newLabelCantidad.htmlFor = 'id_items_venta-'+forms.value+'-cantidad'
+
+        //Actualización de id y name para input cantidad
+        var newCantidad = document.querySelector('#id_items_venta-0-cantidad').cloneNode(true);
+        newCantidad.name = 'items_venta-'+forms.value+'-cantidad'
+        newCantidad.id = 'id_items_venta-'+forms.value+'-cantidad'
+
+        var p1 = document.createElement("p");
+        var p2 = document.createElement("p");
+
+        document.querySelector('#formset-container').appendChild(newLabelProducto)
+        document.querySelector('#formset-container').appendChild(newProducto)
+        document.querySelector('#formset-container').appendChild(p1)
+
+        document.querySelector('#formset-container').appendChild(newLabelCantidad)
+        document.querySelector('#formset-container').appendChild(newCantidad)
+        document.querySelector('#formset-container').appendChild(p2)
+
+        forms.value = parseInt(forms.value) + 1
+    }
+    */
 </script>
 {% endblock %}
