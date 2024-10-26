@@ -19,10 +19,6 @@ class NuevoProductoForm(forms.ModelForm):
             else:
                 field.widget.attrs['class'] = 'form-check-input'
 
-
-
-
-
 class ModificarProductoForm(forms.ModelForm):
     class Meta:
         model = Producto
