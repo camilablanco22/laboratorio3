@@ -1,5 +1,5 @@
 from django import forms
-
+from django.forms import inlineformset_factory
 from apps.venta.models import Venta, Item
 
 
@@ -33,3 +33,13 @@ class NuevoItemForm(forms.ModelForm):
                 field.widget.attrs['class'] = 'form-control'
             else:
                 field.widget.attrs['class'] = 'form-check-input'
+
+
+# Crear el formset para los items
+ItemFormSet = inlineformset_factory(
+    Venta,
+    Item,
+    form=NuevoItemForm,
+    extra=1,  # Número de formularios vacíos
+    can_delete=True  # Permite eliminar secciones
+)
