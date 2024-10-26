@@ -27,6 +27,8 @@ def nueva_venta(request):
 
                 for item in items:
                     item.save()
+                    item.producto.cantidad -= item.cantidad
+                    item.producto.save()
                 return redirect('venta:lista_ventas')  # Redirige a la lista de ventas después de guardar los items
 
     else:

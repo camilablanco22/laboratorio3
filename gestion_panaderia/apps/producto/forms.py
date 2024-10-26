@@ -6,7 +6,7 @@ from apps.producto.models import Producto
 class NuevoProductoForm(forms.ModelForm):
     class Meta:
         model = Producto
-        fields = ['nombre', 'descripcion', 'unidadMedida', 'precio', 'cantidad', 'tipo']
+        fields = ['nombre', 'descripcion', 'unidadMedida', 'precio', 'cantidad', 'tipo', 'cantidadMinima']
         widgets = {
             'descripcion': forms.Textarea(attrs={'class': 'form-control input-sm', 'rows': 4}),
         }
@@ -26,7 +26,7 @@ class NuevoProductoForm(forms.ModelForm):
 class ModificarProductoForm(forms.ModelForm):
     class Meta:
         model = Producto
-        fields = ['nombre', 'descripcion', 'unidadMedida', 'precio', 'cantidad', 'tipo']
+        fields = ['nombre', 'descripcion', 'unidadMedida', 'precio', 'cantidad', 'tipo', 'cantidadMinima']
         widgets = {
             'descripcion': forms.Textarea(attrs={'class': 'form-control input-sm', 'rows': 4}),
         }

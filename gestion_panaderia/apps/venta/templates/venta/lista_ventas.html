@@ -21,7 +21,7 @@
         <tbody>
             {% for venta in ventas %}
                 <tr>
-                    <td>{{ venta.fecha_venta }}</td>
+                    <td>{{ venta.fecha_venta|date:"d-m-Y h:i" }}</td>
                     <td>{{ venta.tipo_cliente }}</td>
                     <td>{{ venta.tipo_venta }}</td>
                     <td>{{ venta.monto_total }}</td>
