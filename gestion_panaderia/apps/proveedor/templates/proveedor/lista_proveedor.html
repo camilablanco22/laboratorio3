@@ -1,21 +1,18 @@
 {% extends "base/base.html" %}
 {% load static %}
-{% block titulo %}Materias Primas{% endblock %}
+{% block titulo %}Proveedores{% endblock %}
 {% block contenido_principal %}
 <div class="container-fluid mt-5">
     <div class="container-fluid text-center rounded cabecera mt-5">
         <header id="home">
-            <h1>Materia Prima</h1>
-            <h2>Listado de materia prima</h2>
+            <h1>Proveedores</h1>
+            <h2>Listado de proveedores</h2>
         </header>
     </div>
 
     <div class="container-fluid mt-3 mb-3">
         <a href="{% url 'proveedor:nuevo_proveedor' %}" class="btn btn-primary">
             AGREGAR
-        </a>
-        <a href="{% url 'pedido:nuevo_pedido' %}" class="btn btn-secondary">
-            REGISTRAR PEDIDO
         </a>
         <p></p>
         <table class="table table-bordered table-striped">
