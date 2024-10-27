@@ -6,7 +6,7 @@ class Proveedor(models.Model):
     telefono = models.CharField(max_length=15)
     email = models.EmailField(max_length= 200)
     domicilioCalle = models.CharField(max_length=100)
-    domicilioNum = models.PositiveIntegerField
+    domicilioNum = models.PositiveIntegerField()
     domicilioLocalidad = models.CharField(max_length=100)
     domicilioDepartamento = models.CharField(max_length=100)
     razonSocial = models.CharField(max_length=100)
