@@ -27,7 +27,7 @@ class NuevoItemForm(forms.ModelForm):
         fields = ['producto', 'cantidad']
 
     def _init_(self, *args, **kwargs):
-        super()._init_(*args, **kwargs)
+        super().__init__(*args, **kwargs)
         for field in self.fields.values():  # esto es para cuestión de estilos
             if not isinstance(field.widget, forms.CheckboxInput):
                 field.widget.attrs['class'] = 'form-control'
