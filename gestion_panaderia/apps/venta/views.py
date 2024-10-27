@@ -40,8 +40,6 @@ def nueva_venta(request):
         'formset': formset
     })
 
-
-
 def lista_ventas(request):
     ventas = Venta.objects.all()  # Obtener todas las ventas
     return render(request, 'venta/lista_ventas.html', {'ventas': ventas})
