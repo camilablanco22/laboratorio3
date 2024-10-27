@@ -27,4 +27,5 @@ urlpatterns = [
     path('materiaprima/', include('apps.pedido.urls', namespace='pedido')),
     path('proveedor/', include('apps.proveedor.urls', namespace='proveedor')),
     path('', TemplateView.as_view(template_name='base/home.html'), name='home'),
+    path('informes/', include('apps.informe.urls', namespace='informe')),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
