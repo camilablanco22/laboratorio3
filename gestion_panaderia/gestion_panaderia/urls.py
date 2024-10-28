@@ -28,5 +28,6 @@ urlpatterns = [
     path('proveedor/', include('apps.proveedor.urls', namespace='proveedor')),
     path('', TemplateView.as_view(template_name='base/home.html'), name='home'),
     path('informes/', include('apps.informe.urls', namespace='informe')),
-    path('cliente-mayorista', include('apps.cliente_mayorista.urls', namespace='cliente_mayorista')),
+    path('cliente-mayorista/', include('apps.cliente_mayorista.urls', namespace='cliente_mayorista')),
+    path('empleados/', include('apps.empleado.urls', namespace='empleado')),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
