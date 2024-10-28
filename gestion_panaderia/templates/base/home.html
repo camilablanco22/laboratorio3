@@ -3,7 +3,7 @@
 {% block titulo %}Panadería El Maná{% endblock %}
 {% block contenido_principal %}
     <div class="container-fluid contenedor-cuerpo">
-        <div class="container-fluid text-center rounded cabecera">
+        <div class="cabecera container-fluid text-center rounded ">
             <header>
                 <h1>PANADERÍA EL MANÁ</h1>
                 <h2>PÁGINA PRINCIPAL</h2>
@@ -15,11 +15,31 @@
             <div class="row row-cols-1 row-cols-md-4 g-5">
                 <div class="col">
                     <div class="card h-100 text-center">
-                        <img src="{% static 'img/panes.jpeg' %}" class="card-img-top" alt="Productos">
+                        <img src="{% static 'img/ventas.png' %}" class="card-img-top" alt="Ventas">
+                        <div class="card-body">
+                            <h5 class="card-title">Ventas</h5>
+                            <p class="card-text">Realizar una nueva venta, información sobre ventas realizadas, actualizar precios</p>
+                            <a href="{% url 'venta:lista_ventas' %}" class="btn btn-success">ACCEDER</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 text-center">
+                        <img src="{% static 'img/productopan.jpg' %}" class="card-img-top" alt="Productos">
                         <div class="card-body">
                             <h5 class="card-title">Productos</h5>
                             <p class="card-text">Explora nuestra variedad de productos recién horneados, con variedad en panificación y pastelería.</p>
                             <a href="{% url 'producto:lista_productos' %}" class="btn btn-success">ACCEDER</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 text-center">
+                        <img src="{% static 'img/materiaprima4.jpg' %}" class="card-img-top" alt="Materia prima">
+                        <div class="card-body">
+                            <h5 class="card-title">Materia prima</h5>
+                            <p class="card-text">Explora nuestra variedad materia prima, de la mejor calidad y obtenida gracias a los mejores proveedores.</p>
+                            <a href="{% url 'pedido:lista_materia_prima' %}" class="btn btn-success">ACCEDER</a>
                         </div>
                     </div>
                 </div>
@@ -43,16 +63,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col">
-                    <div class="card h-100 text-center">
-                        <img src="{% static 'img/empleados%202.png' %}" class="card-img-top" alt="Empleados">
-                        <div class="card-body">
-                            <h5 class="card-title">Empleados</h5>
-                            <p class="card-text">Información completa sobre todos los empleados, modificar información.</p>
-                            <a href="#" class="btn btn-success">ACCEDER</a>
-                        </div>
-                    </div>
-                </div>
+
                 <div class="col">
                     <div class="card h-100 text-center">
                         <img src="{% static 'img/mayorista.jpeg' %}" class="card-img-top" alt="Clientes mayoristas">
@@ -65,11 +76,11 @@
                 </div>
                 <div class="col">
                     <div class="card h-100 text-center">
-                        <img src="{% static 'img/ventas.png' %}" class="card-img-top" alt="Ventas">
+                        <img src="{% static 'img/empleados%202.png' %}" class="card-img-top" alt="Empleados">
                         <div class="card-body">
-                            <h5 class="card-title">Ventas</h5>
-                            <p class="card-text">Realizar una nueva venta, información sobre ventas realizadas, actualizar precios</p>
-                            <a href="{% url 'venta:lista_ventas' %}" class="btn btn-success">ACCEDER</a>
+                            <h5 class="card-title">Empleados</h5>
+                            <p class="card-text">Información completa sobre todos los empleados, modificar información.</p>
+                            <a href="#" class="btn btn-success">ACCEDER</a>
                         </div>
                     </div>
                 </div>
@@ -93,16 +104,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col">
-                    <div class="card h-100 text-center">
-                        <img src="{% static 'img/materiaprima.jpg' %}" class="card-img-top" alt="Materia prima">
-                        <div class="card-body">
-                            <h5 class="card-title">Materia prima</h5>
-                            <p class="card-text">Explora nuestra variedad materia prima, de la mejor calidad y obtenida gracias a los mejores proveedores.</p>
-                            <a href="{% url 'pedido:lista_materia_prima' %}" class="btn btn-success">ACCEDER</a>
-                        </div>
-                    </div>
-                </div>
+
             </div>
         </div>
     </div>

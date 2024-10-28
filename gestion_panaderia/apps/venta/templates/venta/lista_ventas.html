@@ -2,10 +2,15 @@
 {% block titulo %}Listado de Ventas{% endblock %}
 {% block contenido_principal %}
 <div class="container-fluid mt-5">
-  <h1>Ventas Registradas</h1>
-  <a href="{% url 'venta:nueva_venta' %}" class="btn btn-primary">
-            Nueva venta
-  </a>
+    <div class="container-fluid text-center rounded cabecera mt-5">
+        <header id="home">
+            <h1>Ventas</h1>
+            <h2>Listado de ventas</h2>
+        </header>
+    </div>
+    <a href="{% url 'venta:nueva_venta' %}" class="btn btn-primary">
+        Nueva venta
+    </a>
 
     <table class="table table-bordered mt-3">
         <thead>
