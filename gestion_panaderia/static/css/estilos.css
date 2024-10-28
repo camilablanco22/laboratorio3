@@ -6,15 +6,6 @@ div.contenedor-cuerpo{
                       background-image: url("../IMG/dibujo-panes.jpg")
                       }
 
-div.cabecera{background-color: darkred;
-            font-family: "Book Antiqua";
-            color: #ffeae4;
-            padding: 2em 0;
-            margin-bottom: 2em;
-            text-align: center;
-            }
-
-
 fieldset.formulario{background-color: #ffeae4}
 
 div.pie{background-color: darkred;
