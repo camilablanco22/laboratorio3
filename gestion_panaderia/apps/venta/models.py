@@ -3,13 +3,28 @@ from django.db import models
 # Create your models here.
 
 class Venta(models.Model):
-    tipo_cliente = models.CharField()
+    TIPO_CLIENTE_CHOICES = [
+        ('Mayorista', 'Mayorista'),
+        ('Final', 'Consumidor final')
+    ]
+
+    TIPO_VENTA_CHOICES = [
+        ('Contado', 'Contado'),
+        ('Credito', 'Crédito')
+    ]
+
+    FORMA_PAGO_CHOICES = [
+        ('Tarjeta', 'Tarjeta'),
+        ('Efectivo', 'Efectivo')
+    ]
+
+    tipo_cliente = models.CharField(choices=TIPO_CLIENTE_CHOICES)
     cliente_mayorista = models.ForeignKey('cliente_mayorista.ClienteMayorista', on_delete = models.SET_NULL,
                                            related_name = 'ventas_cliente_mayorista', blank=True, null=True)
-    fecha_venta = models.DateTimeField()
-    tipo_venta = models.CharField()
-    forma_pago = models.CharField()
-    monto_total = models.DecimalField(max_digits = 10, decimal_places = 2)
+    fecha_venta = models.DateTimeField(auto_now_add=True)
+    tipo_venta = models.CharField(choices=TIPO_VENTA_CHOICES)
+    forma_pago = models.CharField(choices=FORMA_PAGO_CHOICES)
+    monto_total = models.DecimalField(max_digits = 10, decimal_places = 2, blank=True, null=True)
     observaciones = models.CharField(max_length = 500)
     empleado = models.ForeignKey('empleado.Empleado', on_delete=models.SET_NULL,
                                            related_name = 'ventas_empleado', blank=True, null=True)

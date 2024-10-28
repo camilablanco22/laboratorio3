@@ -18,6 +18,7 @@ class Producto(models.Model):
     precio = models.DecimalField(max_digits=10, decimal_places=2)
     cantidad = models.PositiveIntegerField()
     tipo = models.CharField(max_length=50, choices=TIPO_CHOICES)
+    cantidadMinima = models.PositiveIntegerField(null=True, blank=True)
     estado = models.BooleanField(default=True)
 
     def __str__(self):
