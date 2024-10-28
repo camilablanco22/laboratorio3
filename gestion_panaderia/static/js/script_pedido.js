@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     const addButton = document.getElementById('add-form');
     const formsetContainer = document.getElementById('formset-container');
-    const totalForms = document.getElementById('id_items_venta-TOTAL_FORMS');
+    const totalForms = document.getElementById('id_items_pedido-TOTAL_FORMS');
 
     // Función para actualizar los índices de los formularios
     function updateFormIndexes() {
